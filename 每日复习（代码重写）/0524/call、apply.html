@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // call和apply都是改变this的指向
+        // this指向被改变的情况：
+            //  1.当this指向一个基本包装类型的时候，则指向其包装对象；
+            // 2.当this指向null、undefined的时候，则指向window；
+            // 3.当this指向object的时候，则指向该对象
+        // call调用了函数，并改变了函数的this指向
+        // 如果要给call传参，则从call的第二个参数开始，依次传入
+
+        // apply调用了函数，并改变了函数的this指向
+        // 如果要给this传参，则把所有参数放在数组中，传入apply的第二个参数
+
+            function fn(a, b) {
+            console.log(a + b);
+            console.log(this);
+        }
+        fn.call(1, 1, 2) //this-->Number 3
+        fn.call("1", 1, 2) //this-->String 3
+        fn.call(true, 1, 2) //this-->boolean 3
+        fn.call(null, 1, 2)//this-->window 3
+        fn.call(undefined, 1, 2) //this-->window 3
+        fn.call({}, 1, 2)//this-->object 3
+        fn.call([], 1, 2)//this-->Array 3
+        fn.call(function () {}, 1, 2)// this-->fn 3
+
+
+        fn.apply(1, [1, 2]) //this-->Number 3
+        fn.apply("1", [1, 2])//this-->String 3
+        fn.apply(true, [1, 2])  //this-->boolean 3
+        fn.apply(null, [1, 2]) //this-->window 3
+        fn.apply(undefined, [1, 2])  //this-->window 3
+        fn.apply({}, [1, 2])//this-->object 3
+        fn.apply([], [1, 2])//this-->Array 3
+        fn.apply(function () {}, [1, 2])// this-->fn 3
+    </script>
+</body>
+</html>

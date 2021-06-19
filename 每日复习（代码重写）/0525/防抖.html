@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id='ipt'>
+    <script>
+        // //写节流之前，先再写一遍防抖吧
+        // function center(){
+        //     //封装的是核心代码的函数
+        //     console.log('这里是核心代码！');
+        //     console.log(this);
+        // }
+        // document.onmousemove=throttle(center,100);
+        // //鼠标移动时间，第一个参数是核心代码的函数，第二个则是时间
+        // function throttle(fn,time){
+        //     //封装的是节流的函数
+        //     let lastTime=0;
+        //     //声明一个变量，用于存放上一次的时间戳，第一次为0
+        //     return function(){
+        //         //返回一个变量是因为鼠标移动事件后面应该是一个函数，
+        //         //上面执行函数，所以这里要把返回值变成函数，让事件使用
+        //         var nowTime=+new Date();
+        //         //声明的是每次移动的时间戳
+        //         if(nowTime-lastTime<time){
+        //             //如果这次移动距离上一此移动时间小于我们所规定的时间，则直接return
+        //             return;
+        //         }
+        //         //将这次的时间戳给lastTime作为下一次的上一次时间戳
+        //         lastTime=nowTime;
+        //         //执行核心代码
+        //         //发现本应该this指向document的核心代码，因为调用方式是默认调用，
+        //         // this指向却变成了window，那么通过强制绑定，将this值修改以下
+        //         //并且将e的值修改好
+        //         fn.call(this,arguments[0]);
+        //     }
+        // }
+
+
+        // //下面是防抖
+        // function center(){
+        //     console.log('这是核心代码！！');
+        //     //和节流一样，这里需要封装一个函数专门用于写核心代码
+        //     console.log(this);
+        // }
+        // const oIpt=document.querySelector('#ipt');
+        // oIpt.oninput=debounce(center,300);
+        // //封装一个防抖函数
+        // function debounce(fn,time){
+        //     let timer=null;//变量用于清除定时器
+        //     return function(){
+        //         clearTimeout(timer);
+        //         let _this=this;
+        //         let e=arguments[0];
+        //         timer=setTimeout(function(){
+        //             //设置一个定时器，用于延迟
+        //             fn.call(_this,e);
+        //             //这个时候的this指向是有问题的，现在指向的是window
+        //             //应该让this指向oIpt
+        //         },time)
+        //     }
+        // }
+
+
+        // function center(e){
+        //     console.log('这是核心代码哦');
+        //     console.log(this);
+        //     console.log(e);
+        // }
+        // let oIpt=document.querySelector('#ipt');
+        // oIpt.oninput=debounce(center,300);
+        // function debounce(fn,time){
+        //     let timer=null;
+        //     return function(){
+        //         clearTimeout(timer);
+        //         let _this=this;
+        //         let e=arguments[0];
+        //         timer=setTimeout(function(){
+        //             fn.call(_this,e);
+        //         },time)
+        //     }
+        // }
+
+
+
+
+
+        // function center(e){
+        //     console.log('这里是核心代码');
+        //     console.log(this);
+        //     console.log(e);
+        // }
+        // let oIpt=document.querySelector('#ipt');
+        // oIpt.oninput=debounce(center,300);
+        // function debounce(fn,time){
+        //     let timer=null;
+        //     return function(){
+        //         clearTimeout(timer);
+        //         let _this=this;
+        //         let e=arguments[0];
+        //         timer=setTimeout(function(){
+        //             fn.call(_this,e);
+        //         },time)
+        //     }
+        // }
+
+
+
+        // function center(){
+        //     console.log('这里是核心代码');
+        //     console.log(this);
+        // }
+        // document.onmousemove=throttle(center,100);
+        // function throttle(fn,time){
+        //     let lastTime=0;
+        //     return function(){
+        //         let nowTime=+new Date();
+        //         if(nowTime-lastTime<time){
+        //             return;
+        //         }
+        //         lastTime=nowTime;
+        //         fn.call(this,arguments[0]);
+        //     }
+        // }
+
+
+        
+
+    </script>
+</body>
+</html>

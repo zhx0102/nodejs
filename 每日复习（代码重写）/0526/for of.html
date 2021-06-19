@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const str='ascdbgh';
+        const arr=['a','s','d','f','g'];
+        for(let key in str){
+            console.log(key);
+            //key(0,1,2,3,4,5)
+        }
+        for(let key in arr){
+            console.log(key);
+            //key
+        }
+        for(let value of str){
+            console.log(value);
+            //value值
+        }
+        for(let value of arr){
+            console.log(value);
+            //value值
+        }
+        // for in拿到的是key，而for of拿到的是value
+        // for of使用的是iterator接口进行遍历的
+        // 所有部署了iterator接口的数据都能用for of进行遍历
+        // 有的为数组也部署了iterator（arguments，nodeList）
+    </script>
+</body>
+</html>

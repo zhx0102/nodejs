@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Object.is():
+        // 判断两个对象是否相等（任然是地址的比较）
+        // 类似于===
+        // 修复了NaN，不等于NaN
+
+        // Object.assign():
+        //  合并对象
+        console.log(Object.is({},{}));//false
+        console.log(Object.is(NaN,NaN));//true
+
+        const o1={
+            name:'laoli'
+        }
+        const o2={
+            age:12
+        }
+        const o3={
+            ssex:'man'
+        }
+        const newObj=Object.assign(o1,o2,o3);
+        console.log(newObj);
+        console.log(newObj===o1);//true
+        //相当于把o2和o3合并到了o1里面
+        const newObj2=Object.assign({},o1,o2,o3);
+        console.log(newObj2===o1);//false
+        //合并到新的对象里
+    </script>
+</body>
+</html>

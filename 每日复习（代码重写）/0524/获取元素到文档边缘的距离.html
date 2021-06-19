@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         * {
+            margin: 0;
+        }
+
+        #outer {
+            width: 800px;
+            height: 800px;
+            border: 2px solid #000;
+            margin: 50px;
+            background-color: skyblue;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        #inner {
+            width: 500px;
+            height: 500px;
+            border: 2px solid #000;
+            margin: 50px;
+            background-color: pink;
+            /* position: relative; */
+        }
+
+        #con {
+            width: 300px;
+            height: 300px;
+            border: 2px solid #000;
+            margin: 50px;
+            background-color: hotpink;
+            position: relative;
+            left: 0;
+            top: 0;
+        }
+
+        #box {
+            width: 100px;
+            height: 100px;
+            border: 2px solid #000;
+            margin: 50px 40px;
+            background-color: darkgoldenrod
+        }
+    </style>
+</head>
+<body>
+    <div id="outer">
+        <div id="inner">
+            <div id="con">
+                <div id="box"></div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var oBox = document.getElementById('box')
+        // function getEleToDoc(Ele){
+        //     var left=0;//到文档左侧的距离
+        //     var top=0;//到文档上边的距离
+        //     var o=Ele;//定义变量，因为o后面会改变
+        //     while(o){
+        //         if(o===Ele){//除了最开始的Ele，其他都需要计算边框
+        //         left+=o.offsetLeft;
+        //         top+=o.offsetTop;
+        //         }else{
+        //         left+=o.offsetLeft+o.clientLeft;
+        //         top+=o.offsetTop+o.clientTop;
+        //         }
+        //         //o每次计算以后都要改变为上一个定位元素
+        //         o=o.offsetParent;
+        //     }
+        //     return {
+        //         left:left,
+        //         top:top
+        //     }
+        // }
+        // var re=getEleToDoc(oBox);
+        // console.log(re);
+
+
+
+
+        function getEleToDoc(Ele){
+            var left=0;
+            var top=0;
+            var o=Ele;
+            while(o){//判断条件为o是否为null
+                if(o===Ele){
+                    //判断o是否为第一个元素
+                    //如果是第一个，就不需要计算边框，反之则需要计算
+                    left+=o.offsetLeft;
+                    top+=o.offsetTop;
+
+                }else{
+                    left+=o.offsetLeft+o.clientLeft;
+                    top+=o.offsetTop+o.clientTop;
+                }
+                o=o.offsetParent;
+                
+
+            }
+            return {
+                left:left,
+                top:top
+            }
+        }
+        var re=getEleToDoc(oBox);
+        console.log(re);
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        promise是什么？
+            函数嵌套函数称为回调地狱，这样的程序会变得难以维护。
+            代码臃肿，耦合度高。
+            promise对象是一个异步编程的结局方案，将异步的操作以同步的形式表达出来。
+        promise：
+            promise是一个构造函数，使用的时候需要实例化
+            Promise对象有all allSettled race any reject resolve等静态方法
+            Promise的原型对象上有then catch  finally等方法
+        */
+       console.dir(Promise);
+       console.dir(Promise.prototype);
+        console.log(new Promise(() => {}));
+    </script>
+</body>
+</html>

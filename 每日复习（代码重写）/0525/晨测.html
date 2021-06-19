@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 谈一谈let和const。
+        // let声明变量，变量作用域和它所在的代码块有关
+        // 特点如下：
+            //  1.支持块作用域
+            // 2.不能声明提升
+            // 3.不能重复声明
+            // 4.可以块嵌套，也有作用域链
+        // const声明常量，值不可修改
+        // 特点：
+            // 1.支持块作用域
+            // 2.变量名大写，也可不大写
+            // 3.不能声明提升
+            // 4.不能重复声明
+            // 5.不能改值，除了地址
+            // 6.一旦声明，立即初始化
+
+            // 节流
+            function center(){
+                console.log('这是核心代码');
+                console.log(this)
+            }
+            document.onmousemove=throttle(center,100);
+            function throttle(fn,time){
+                let lastTime=0;
+                return function(){
+                    let nowTime=+new Date();
+                    if(nowTime-lastTime<time){
+                        
+                    }
+                }
+            }
+
+    </script>
+</body>
+</html>

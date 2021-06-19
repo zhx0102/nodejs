@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //map映射数组
+        //会返回一个和原数组长度一样的数组，可以遍历数组，每次的返回值就是对呀map数组的值
+        // var arr=[1,2,3,4];
+        // var newArr=arr.map(function(item,index){
+        //     return item+10;
+        // })
+        // console.log(newArr);
+
+
+        var person=[{
+            name:'lili1',
+            age:33,
+            sex:'nv'
+        },{
+            name:'lili2',
+            age:33,
+            sex:'man'
+        },{
+            name:'lili3',
+            age:16,
+            sex:'man'
+        },{
+            name:'lili1',
+            age:44,
+            sex:'nv'
+        },]
+        // var newArr=person.filter(function(item,index){        
+        // filter，过滤，依次遍历数组返回一个新数组，如果遍历数组的回调函数返回true，则添加到新数组
+
+        //     return item.sex==='man';
+        // })
+        // console.log(newArr);
+
+
+
+        //every一假即假,返回值是布尔值
+        var re=person.every(function(item,index){
+            return item.sex==='nv';
+        })
+        if(!re){
+            console.log('有男生');
+        }
+        console.log(re);
+        //some一真即真
+        var re2=person.some(function(item,index){
+            return item.sex==='nv';
+        })
+        if(re2){
+            console.log('有女生');
+        }
+    </script>
+</body>
+</html>

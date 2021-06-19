@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //  1. 已知一个url地址 "http://www.baidu.com?name=laozhang&age=18&sex=nv";
+        // 把查询字符串以对象的形式表示  {name:"laozhang",age:18,sex:"nv"}
+        
+        var str="http://www.baidu.com?name=laozhang&age=18&sex=nv";
+        function strToObject(str){
+           if(!str){
+               return str;
+           }
+          var newStrFirst=str.split('?');//从问号处截取
+        //    console.log(newStrFirst[1]);
+           var newStrLast=newStrFirst[1].split('&');//再从&截取，组成新数组
+        //    console.log(newStrLast);// ["name=laozhang", "age=18", "sex=nv"]
+           var obj={};//定义对象装
+           newStrLast.forEach(function(item,index){
+               var arr=item.split('=');
+            //    console.log(arr);
+               //["name", "laozhang"]
+               //["age", "18"]
+               // ["sex", "nv"]
+              
+            Object.defineProperty(obj,arr[0],{//用defineProperty给obj加属性
+                  value:arr[1]
+            })
+               
+           })
+           return obj;
+
+        }
+        var re = strToObject(str);
+        console.log(re);
+
+
+
+        //  2. 已知一个url地址 "http://www.baidu.com",已知用户提交信息是{name:"laozhang",age:18,sex:"nv"}
+        // 请得到一个完整的地址："http://www.baidu.com?name=laozhang&age=18&sex=nv"
+        var obj={
+            name:"laozhang",
+            age:18,
+            sex:"nv"
+        }
+        var url="http://www.baidu.com?";
+        //封装
+        function objToStr(obj,url){
+            var arr=[];
+            for(var key in obj){
+                arr.push(key)//把属性放进数组
+                arr.push(obj[key]);//把值放进数组
+                // console.log(arr);
+            }
+            // console.log(arr);
+            var str='';
+            arr.forEach(function(item,index){
+                str+=item;
+                
+                if(index%2==0){
+                    str+='=';
+                }else{
+                    if(index==arr.length-1){
+                        str;
+                    }else{
+                        str+='&';
+                    }
+                   
+                }
+                
+            })
+            // console.log(str);//name=laozhang&age=18&sex=nv
+            var newStr=url.concat(str);
+                // console.log(newStr);
+                return newStr;
+        }
+        var re2=objToStr(obj,url);
+        console.log(re2);
+
+
+
+
+    </script>
+</body>
+</html>

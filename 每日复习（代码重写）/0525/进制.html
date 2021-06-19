@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //十进制：0，1，2，3，4，5，6，7，8，9，10...
+        //二进制：0，1
+        //八进制：0，1，2，3，4，5，6，7，9，10，11...
+        //十六进制：0，1，2，3，4，5，6，7，8，9，a,b,c,d,e,f,g
+
+        // 二进制开头：0b
+        // 八进制开头：0o
+        // 十六进制开头：0x
+
+        {
+            const num=0o33;
+            console.log(num);//27
+            //输出的时候会自己转成十进制
+        }
+        {
+            const num=0b010001;
+            console.log(num);//17
+        }
+        {
+            const num=0xb67;
+            console.log(num);//2919
+        }
+
+        {
+            const num=30;
+
+            //把num转为任意进制
+            console.log(num.toString(2));//1110
+            console.log(num.toString(8));//36
+            console.log(num.toString(16));//1e
+        }
+
+        {
+            //把a转为b进制
+            console.log(parseInt('111',2));
+            console.log(parseInt('111',3));
+            console.log(parseInt('ff',16));
+        } 
+    {
+        //生成4位长度的随机验证码
+        // // （包含所有数字和小写字母）
+        // let str='';//用来装随机生成的字符
+        // for(let i=0;i<4;i++){
+        //     const num=Math.floor(Math.random()*36);
+        //     const re = num.toString(36);
+        //     //转36进制
+        //     str+=re;
+        // }
+        // console.log(str);
+    }
+
+//    {
+//        let str='';
+//        for(let i=0;i<4;i++){
+//            const num=Math.floor(Math.random()*36);
+//            const re=num.toString(36);
+//            str+=re;
+//        }
+//        console.log(str);
+//    }
+
+
+{
+    let str='';
+    for(let i=0;i<4;i++){
+        const num=Math.floor(Math.random()*36);
+        const re=num.toString(36);
+        str+=re;
+    }
+    console.log(str);
+}
+
+
+{
+
+const re = [1, 2, 3].map(parseInt);
+// parseInt相当于map里面写的函数
+  //相当于：parseInt(1,0);parseInt两个参数:item和index
+            //没有0进制，则默认为十进制
+            //1
+            // parseInt(2.1);一进制里面只有零，因此是NaN
+            // parseInt(3,2);二进制里面只有1，0，因此是NaN
+console.log(re); //[1,NaN,NaN]
+}
+    </script>
+</body>
+</html>

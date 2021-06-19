@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*
+        BigInt
+            js整数计算只能精确到 2的53次方
+            js整数计算只能计算到2的1024次方，否则将变为Infinity
+            引入了一种新的数据类型 BigInt（大整数），来解决这个问题。BigInt 只用来表示整数，没有位数的限制，任何位数的整数都可以精确表示。
+            为了与 Number 类型区别，BigInt 类型的数据必须添加后缀n
+        
+        */
+       console.log(2**53);
+       //9007199254740992
+       const a=1n;
+       const b=2n;
+       console.log(typeof a);//bigint
+       console.log(a===1);//false
+       console.log(Object.prototype.toString.call(a));
+       //[object BigInt]
+       console.log(a+b);//3n
+    </script>
+</body>
+
+</html>

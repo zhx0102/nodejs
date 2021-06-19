@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // fn();//fn is not a function
+        // if(true){
+        //     function fn(){
+        //         console.log(111111);
+        //     }
+        //     fn();
+        // }
+        // fn();
+        //实际上这段代码在不同的浏览器下会运行出不同的结果
+        //因为es6规定了浏览器可以自己的行为
+        //尽量不要在块级作用域中去写函数，如果要写，则使用以下方法
+        if(true){
+            let fn=function(){
+                console.log(22222222);
+            }
+            fn();
+        }
+    </script>
+</body>
+</html>

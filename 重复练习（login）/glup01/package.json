@@ -1,0 +1,19 @@
+{
+  "name": "gulp01",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "gulp watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.14.6",
+    "@babel/preset-env": "^7.14.5",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0"
+  },
+  "dependencies": {}
+}

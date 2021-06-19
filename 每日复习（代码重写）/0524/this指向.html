@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //this的指向跟this所在的函数相关
+        // 函数的调用方式不同，this的指向也不同
+        // 函数的调用方法有
+        // 1.默认调用fn();
+        // 2.上下文对象调用Object.fn();this指向的是这个上下文对象，注意隐式丢失
+        // 3.实例化调用new fn()，this指向的是这个实例化对象
+        // 4.强制绑定 fn.call(),this指向的是call的第一个参数
+        // function fn(){
+        //     console.log(111111111);
+        // }
+        // // 1.默认调用fn()
+        // fn();//window
+        // // 2.上下文对象调用
+        // var o={
+        //     do:fn
+        // }
+        // o.do();//o
+
+        // //隐式丢失
+        // var re=o.do();
+        // re();//window
+
+        // //实例化调用
+        // var re2=new fn();//re2
+
+        // //强制绑定
+        // fn.call(1)//1
+
+
+
+
+
+        // this 的指向跟它所在的函数有关
+        //函数的调用不同，this的只想也不同
+        //函数的调用方法有：
+        // 1.默认调用fn(),this指向window
+        // 2.上下文对象调用Object.fn()，this指向上下文对象，注意隐式丢失
+        // 3.实例化调用new fn(),this指向实例化对象
+        // 4.强制调用fn.call(),this指向call的第一个参数
+        function fn(){
+            console.log(1111111);
+        }
+        //1.默认调用fn()
+        fn();//window
+
+        // 2.上下文对象调用Object.fn()
+        var o1={
+            on:fn
+        }
+        o1.on();//o1
+
+        //隐式丢失
+        var re=o1.on;
+        re();//window
+
+        // 3.实例化调用
+        var re2=new fn();
+        //re2
+
+        // 4.强制调用
+        fn.call(1);//1
+
+    </script>
+</body>
+</html>

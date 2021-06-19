@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Math提供的静态方法
+        // Math.trunc():将小数部分去掉，保留整数
+        const num=123.7547;
+        console.log(Math.trunc(num));//123
+        //Math.sign()：判断一个数是正数还是负数，
+                       //还是0，还是NaN
+        console.log(Math.sign(10));//1
+        console.log(Math.sign(-10));//-1
+        console.log(Math.sign(0));//0
+        console.log(Math.sign(NaN));//NaN
+        //Math.sqrt():平方根
+        console.log(Math.sqrt(3));//1.7320508075688772
+        //Math.cbrt():立方根
+        console.log(Math.cbrt(3));//1.4422495703074083
+        //Math.hypot():求所有参数的平方和的平方根
+        console.log(Math.hypot(3));//3
+
+
+
+        // Number提供的静态方法
+        // Number.isFinite(i):判断是否有限大的数
+        console.log(Number.isFinite(3));//true
+        console.log(Number.isFinite(Infinity));//false
+        //Number.isNaN(i):判断是否是NaN
+        console.log(isNaN(NaN)); //true
+        console.log(isNaN("abc")); //true
+        //类型转换后，则是NaN
+        //Number.isInteger(i):判断是否是整数
+        console.log(Number.isInteger(3));//true
+        console.log(Number.isInteger(3.1415));//false
+        //Number.parseInt(str):将字符串转成对应数值
+        console.log(Number.parseInt('123qvg'));//123
+
+
+
+
+
+    </script>
+</body>
+</html>

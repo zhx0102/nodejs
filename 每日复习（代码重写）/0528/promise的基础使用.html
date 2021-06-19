@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        promise的使用：
+              需要实例化调用,实例化的时候，参数必须是一个回调函数
+                 回调函数有两个参数：resolve，reject，这两个参数其实是回调函数
+                 当异步代码执行成功的时候，可以调用resolve函数，通知promise对象，我成功了
+                 当异步代码执行失败的时候，可以调用reject函数，通知promise对象，我失败了
+                 当不调用resolve和reject，则promise一直在等待中。
+                 调用resolve和reject时，回调函数的参数，就是promise状态对应的值
+            
+            promise的返回值：
+                 是一个对象，有两个属性
+                 PromiseState:当前promise的状态
+                 PromiseResult:当前promise的值
+
+            promise的三种状态：
+                 pending:正在进行中
+                 fulfilled/resolved:成功状态
+                 rejected:失败状态
+        */
+        
+        const p1=new Promise((resolve,reject)=>{
+            console.log(1);
+
+            //模拟请求a数据
+            setTimeout(()=>{
+                console.log('a');
+                const data={
+                    name:'laowang'
+                }
+                resolve(data);
+                // reject('err:err');
+            },2000 )
+        });
+        console.log(p1);
+
+        // const p1=new Promise((resolve,reject)=>{
+        //     console.log(1);
+
+        //     //模拟请求a数据
+        //     setTimeout(()=>{
+        //         console.log('a');
+        //         const data={
+        //             name:'laoli'
+        //         }
+        //         resolve(data);
+        //         // reject('err:err');
+        //     },2000 )
+        // });
+        // console.log(p1);
+
+        // const p1=new Promise((resolve,reject)=>{
+        //     console.log(1);
+
+        //     //模拟请求a数据
+        //     setTimeout(()=>{
+        //         console.log('a');
+        //         const data={
+        //             name:'lili'
+        //         }
+        //         resolve(data);
+        //         // reject('err:err');
+        //     },2000 )
+        // });
+        // console.log(p1);
+    </script>
+</body>
+</html>

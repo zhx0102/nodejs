@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Prominse.allSttled:
+                  //返回一个promise对象
+                  //也是处理多个promise的执行，无论其中失败还是成功，最终都会返回一个成功的promise对象
+                  //返回promise对象的值，是一个数组，包含多个对象，每个对象都是描述每个promise对象
+
+                  const p1=new Promise((resolve,reject)=>{
+            console.log('请求A数据中');
+            try{
+                // throw new Error('err:A错了');
+                console.log('A成功');
+                resolve('A');
+            }catch(e){
+                reject(e);
+            }
+        })
+        const p2=new Promise((resolve,reject)=>{
+            console.log('请求B数据中');
+            try{
+                // throw new Error('err:B错了');
+                console.log('B成功');
+                resolve('B');
+            }catch(e){
+                reject(e);
+            }
+        })
+        const p3=new Promise((resolve,reject)=>{
+            console.log('请求C数据中');
+            try{
+                throw new Error('err:C错了');
+                console.log('C成功');
+                resolve('C');
+            }catch(e){
+                reject(e);
+            }
+        })
+
+        const re=Promise.allSettled([p1,p2,p3]);
+        console.log(re);
+
+
+
+
+    </script>
+</body>
+</html>

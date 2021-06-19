@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*
+        async函数是Generator的语法糖
+        使用async加函数外边，表示处理异步
+
+        await来处理异步代码
+        await等待，只能等待promise对象
+        */
+        //    async function fn(){
+        //        await setTimeout(()=>{
+        //            console.log(1);
+        //        },2000);
+        //        await console.log(2);
+        //    }
+        //    const re=fn();
+        //    console.log(re);
+
+        // async function fn() {
+        //    const dataA = await new Promise((resolve, reject) => {
+        //         console.log('请求数据');
+        //         setTimeout(() => {
+        //             try {
+        //                 // throw new Error('err:errA');
+        //                 console.log('A成功');
+        //                 const dataA = {
+        //                     name: 'lili'
+        //                 }
+        //                 resolve(dataA);
+        //             }catch(e){
+        //                 reject(e);
+        //             }
+        //         }, 2000)
+        //     })
+
+        //     const dataB = await new Promise((resolve, reject) => {
+        //         console.log('请求数据');
+        //         setTimeout(() => {
+        //             console.log('B成功');
+        //             const dataB = {
+        //                 age: 18
+        //             }
+        //             resolve(Object.assign({},dataB,dataA));
+        //         }, 2000)
+        //     })
+
+        //     const allData = await new Promise((resolve, reject) => {
+        //         console.log('请求数据');
+        //         setTimeout(() => {
+        //             console.log('C成功');
+        //             const dataC = {
+        //                 sex: 'man'
+        //             }
+        //             resolve(Object.assign({},dataC,dataB));
+        //         }, 2000)
+        //     })
+
+        //     return allData;
+        // }
+        // const re = fn();
+        // console.log(re);
+
+        // re.then((data)=>{
+        //     console.log(data);
+        // }).catch((err)=>{
+        //     console.log(err);
+        // })
+
+        // async function fn(){
+        //    const dataA =  await new Promise((resolve,reject)=>{
+        //         console.log('请求数据');
+        //         setTimeout(()=>{
+        //             try{
+        //                 // throw new Error('err:Aerr');
+        //                 console.log('请求A数据成功');
+        //                 const dataA={
+        //                     name:'lili'
+        //                 }
+        //                 resolve(dataA);
+        //             }catch(e){
+        //                 reject(e);
+        //             }
+        //         },2000)
+        //     })
+
+        //     const dataB=await new Promise((resolve,reject)=>{
+        //         console.log('请求数据');
+        //         setTimeout(()=>{
+        //             try{
+        //                 // throw new Error('err:Berr');
+        //                 console.log('请求B数据成功');
+        //                 const dataB={
+        //                     age:18
+        //                 }
+        //                 resolve(Object.assign({},dataA,dataB));
+        //             }catch(e){
+        //                 reject(e);
+        //             }
+        //         },1500)
+        //     })
+
+        //     const allData=await new Promise((resolve,reject)=>{
+        //         console.log('请求数据');
+        //         setTimeout(()=>{
+        //             try{
+        //                 // throw new Error('err:Cerr');
+        //                 console.log('请求C数据成功');
+        //                 const dataC={
+        //                     sex:'man'
+        //                 }
+        //                 resolve(Object.assign(dataB,dataC));
+        //             }catch(e){
+        //                 reject(e);
+        //             }
+        //         },1000)
+        //     })
+        //     return allData;
+        // }
+        // const re=fn();
+        // console.log(re);
+
+        async function fn(){
+           const dataA =  await new Promise((resolve,reject)=>{
+                console.log('请求数据');
+                setTimeout(()=>{
+                    try{
+                        // throw new Error('err:Aerr');
+                        console.log('请求A数据成功');
+                        const dataA={
+                            name:'lili'
+                        }
+                        resolve(dataA);
+                    }catch(e){
+                        reject(e);
+                    }
+                },2000)
+            })
+
+            const dataB=await new Promise((resolve,reject)=>{
+                console.log('请求数据');
+                setTimeout(()=>{
+                    try{
+                        // throw new Error('err:Berr');
+                        console.log('请求B数据成功');
+                        const dataB={
+                            age:18
+                        }
+                        resolve(Object.assign({},dataA,dataB));
+                    }catch(e){
+                        reject(e);
+                    }
+                },1500)
+            })
+
+            const allData=await new Promise((resolve,reject)=>{
+                console.log('请求数据');
+                setTimeout(()=>{
+                    try{
+                        // throw new Error('err:Cerr');
+                        console.log('请求C数据成功');
+                        const dataC={
+                            sex:'man'
+                        }
+                        resolve(Object.assign(dataB,dataC));
+                    }catch(e){
+                        reject(e);
+                    }
+                },1000)
+            })
+            return allData;
+        }
+        const re=fn();
+        console.log(re);
+    </script>
+</body>
+
+</html>

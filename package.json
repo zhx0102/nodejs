@@ -1,0 +1,30 @@
+{
+  "name": "nb-plus0322",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "gulp watch",
+    "build": "gulp build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nowLetsgo/NB-Plus0322.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nowLetsgo/NB-Plus0322/issues"
+  },
+  "homepage": "https://github.com/nowLetsgo/NB-Plus0322#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.5",
+    "ejs": "^3.1.6",
+    "etag": "^1.8.1",
+    "express": "^4.17.1",
+    "express-session": "^1.17.2",
+    "mongoose": "^5.12.13"
+  }
+}

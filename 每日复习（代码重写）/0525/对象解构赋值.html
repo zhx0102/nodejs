@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //对象的简写
+        // const person={
+        //     name:name,
+        //     age:age
+        // }//当对象的key与value一致时，可简写为
+        // const person={
+        //     name,
+        //     age
+        // }
+        // console.log(person);
+
+
+        // 对象的解构赋值
+        // 对象的解构赋值要掌握key的对应关系
+        // 特点：
+        // 1.对象解构赋值可以设置默认值
+        // 2.对象和数组解构赋值都可以嵌套
+        
+
+
+
+
+        const o={
+            name:'lili',
+            age:22,
+            sex:'man'
+        }
+        // {
+        //     const {
+        //         name,
+        //         age,
+        //         sex
+        //     }=o;
+        //     console.log(name,age,sex);//lili 22 man
+        // }
+
+        //赋默认值
+        {
+            const {
+                name='laowang',
+                age=33,
+                sex='man',
+                score=99
+            }=o;
+            console.log(name,age,sex,score);//lili 22 man 99
+        }
+
+        //嵌套解构赋值
+        {
+            const o2={
+                name:'lili',
+                age:33,
+                sex:'man',
+                score:[77,99,100]
+            }
+            const {
+                name,
+                age,
+                sex,
+                score:[a,b,c]
+            }=o2;
+            console.log(name,age,sex,a,b,c);
+            //lili 33 man 77 99 100
+        }
+
+
+        //函数传参
+        function fn([a,b,c]){
+            console.log(a,b,c);
+        }
+        const arr=[1,2,3,4];
+        fn(arr);//1,2,3
+
+        //练习
+        const {
+            log
+        } = console;//平时用的console.log，相当于console对象里调用li方法
+                    //现在将console直接解构赋值给变量log，它就会去找对应的console中的log方法，解构赋值给log
+
+        log("hello");
+
+        //练习2:通过解构赋值的方式 拿到一个数组的第一个值和最后一个值
+        {
+            const arr = [1, 2, 3, 4, 5, 6];
+            const {
+                0: a,//根据下标拿数据，这是拿第一个
+                [arr.length - 1]: b//arr.length-1是拿最后一个
+            } = arr;
+            console.log(a, b);
+        }
+    </script>
+</body>
+</html>

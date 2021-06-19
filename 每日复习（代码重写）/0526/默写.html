@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 谈一谈iterator
+        如果一个数据结构设置了iterator接口，那这个数据结构可以迭代。
+        在ES6中，数据结构如果有Symbol.iterator属性，那么就认为这个数据结构可以迭代
+        在ES6中许多数据结构都有iterator接口，如Array、string、map、set
+        解构赋值的时候，默认调用了iterator接口
+        扩展运算符使用的时候，默认调用了iterator接口
+        for of调用了iterator接口
+        对象是没有iterator接口的
+
+        手写iterator
+        
+        谈一谈箭头函数的特点
+        箭头函数没有this
+        箭头函数不能被构造函数使用，也就是new关键字调用
+        箭头函数没有arguments对象
+        箭头函数不能使用yield，不能成为generator函数
+
+        谈一谈箭头函数的特点：
+        箭头函数没有this，
+        箭头函数不能被构造函数使用，也就是不能被new关键字调用
+        箭头函数没有arguments对象，
+        箭头函数不能使用yield命令，也就是不能成为generator函数
+        
+
+        谈一谈reduce
+        reduce遍历累加
+        有两个参数：参数一回调函数
+        参数1：初始值或上一次回调函数的返回值
+        参数2：当前值
+        参数3：当前值下标
+        参数4：引用原数组
+        参数二：初始值
+        如果没有初始值，进入reduce的是数组第一第二个值
+        reduce的返回值就是最后累加和
+
+         谈一谈闭包
+         闭包的条件：
+           1.函数内嵌套函数
+           2.内部函数使用外部函数变量
+           3.调用外部函数
+
+         闭包是什么？
+         一般的理解：函数内嵌套函数
+         看浏览器以后的理解：内部函数的scopes，包含引用了外部函数变量的closure对象
+
+         闭包的作用
+         延长了局部变量的生命周期
+         外部可使用局部变量
+
+         闭包的缺点
+         将局部变量长期驻于内存中，会容易导致内存泄漏（iE9以下）
+
+         解决缺点：
+         减少使用闭包
+         及时释放
+
+         html语义化标签
+         标签语义化，可以使团队开发和维护更便利
+         没有css的情况下，也能有好的内容结构和代码结构
+         seo，搜索引擎能更好的了解网页的各部门之间的关系，更便捷更快的进行搜索
+
+
+        
+        */
+        // function myIterator(arr){
+        //     let index=0;
+        //     return{
+        //         next:function(){
+        //             if(index<arr.length){
+        //                 return{
+        //                     value:arr[index++],
+        //                     done:false
+        //                 }
+        //             }else{
+        //                 return{
+        //                     value:undefined,
+        //                     done:true
+        //                 }
+        //             }
+        //         }
+        //     }
+        // }
+        // const arr=[1,2,3,4,5];
+        // const re=myIterator(arr);
+        // console.log(re.next());
+        // console.log(re.next());
+        // console.log(re.next());
+        // console.log(re.next());
+        // console.log(re.next());
+        // console.log(re.next());
+
+    </script>
+</body>
+</html>

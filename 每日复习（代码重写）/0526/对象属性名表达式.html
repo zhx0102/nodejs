@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 属性名表达式
+        const key ='name';
+        const o={
+            key:'laowang',
+            //这是把key作为的字符串，并不是上面定义的变量
+            [key]:'laoli'
+            // 这才是作为变量
+        }
+        console.log(o);
+        //{key: "laowang", name: "laoli"}
+
+
+        //对象写rest参数
+        const o1={
+            name:'lili',
+            age:22,
+            sex:'man',
+            score:100
+        }
+        const {
+            //解构赋值方法
+            name,
+            age,
+            ...o2
+        }=o1;
+        console.log(name,age,o2);
+        // lili 22 {sex: "man", score: 100}
+
+        // Object静态方法keys values entries 失了忆拿到某个对象的键 值 键值对组成的数组
+        // 然后通过数组方法遍历对象
+        console.log(Object.keys(o1));
+        // ["name", "age", "sex", "score"]
+        console.log(Object.values(o1));
+        // ["lili", 22, "man", 100]
+        console.log(Object.entries(o1));
+        // [Array(2), Array(2), Array(2), Array(2)]
+
+        for(let key of Object.keys(o1)){
+            
+            console.log(key);
+            console.log(o1[key]);
+        }
+
+
+    </script>
+</body>
+</html>

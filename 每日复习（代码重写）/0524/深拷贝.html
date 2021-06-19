@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+       
+        // //封装一个查数据类型的函数
+        // function checkType(data){
+        //     return Object.prototype.toString.call(data).slice(8,-1).toLowerCase();
+        // }
+        // //封装
+        // function deepClone(data){
+        //     //拷贝之前，应该先判断数据类型
+        //     //如果是对象和数组，则分别创建新的对象或数组
+        //     if(checkType(data)==="object"){
+        //         var newPerson={};
+        //     }else if(checkType(data)==="array"){
+        //         var newPerson=[];
+        //     }else{
+        //         return data;//其他类型不进行拷贝，返回即可
+        //     }
+        //     for(var key in data){//遍历拷贝属性
+        //         newPerson[key]=deepClone(data[key]);
+        //     }
+        //     return newPerson;
+        // }
+        // var person={
+        //     name:'小王',
+        //     age:22,
+        //     score:{
+        //         math:99,
+        //         cha:88
+        //     }
+        // }
+        // var re=deepClone(person);
+        // console.log(re);
+        // console.log(re===person);
+        // console.log(re.score===person.score);
+
+        
+        // //深拷贝
+        // //封装一个查数据的类型的函数
+        // function checkType(data){
+        //     return Object.prototype.toString.call(data).slice(8,-1).toLowerCase();
+        // }
+        // //封装拷贝函数
+        // function deepClone(data){
+        //     if(checkType(data)==='array'){
+        //         var newPerson=[];
+        //     }else if(checkType(data)==='object'){
+        //         var newPerson={};
+        //     }else{
+        //         return data;
+        //     }
+        //     for(var key in data){
+        //         newPerson[key]=deepClone(data[key]);
+        //     }
+        //     return newPerson;
+        // }
+        // var person={
+        //     name:'lili',
+        //     age:22,
+        //     score:{
+        //         math:22,
+        //         cha:99
+        //     }
+        // }
+        // var re=deepClone(person);
+        // console.log(re);
+
+
+
+
+        function checkType(data){
+            return Object.prototype.toString.call(data).slice(8,-1).toLowerCase();
+        }
+        function deepClone(data){
+            if(checkType(data)==='array'){
+                var newPerson=[];
+            }else if(checkType(data)==='object'){
+                var newPerson={};
+            }else{
+                return data;
+            }
+            for(var key in data){
+                newPerson[key]=deepClone(data[key]);
+            }
+            return newPerson;
+        }
+        var person={
+            name:'lili',
+            age:22,
+            score:{
+                math:99,
+                cha:100
+            }
+        }
+        var newPerson=deepClone(person);
+        console.log(newPerson);
+
+    </script>
+</body>
+</html>

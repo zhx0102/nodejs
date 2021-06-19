@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // //Object.defineProperty给已存在的对象扩展或修改可以描述的属性或方法
+        var o1={
+            name:'lili'
+        }
+        // Object.defineProperty(o1,'age',{
+        //     value:22,
+        //     writable:true,
+        //     enumerable:true,
+        //     configurable:true
+        // })
+        // console.log(o1);
+
+
+
+        // //给已存在的对象扩展或修改可描述的属性或方法
+        // Object.defineProperty(o1,'age',{
+        //     value:33,
+        //     writable:true,
+        //     enumerable:true,
+        //     configurable:true
+        // })
+        // console.log(o1);
+
+
+
+
+        //给已存在的对象扩展或修改可描述的属性或方法
+        Object.defineProperty(o1,'age',{
+            value:'55',
+            writable:true,
+            enumerable:true,
+            configurable:true
+        })
+        console.log(o1);
+    </script>
+</body>
+</html>

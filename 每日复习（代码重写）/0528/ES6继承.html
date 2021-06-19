@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // //父类
+        // class Person{
+        //     constructor(name){
+        //         this.name=name;
+        //     }
+        //     eat(){
+        //         console.log('鸡公煲');
+        //     }
+        // }
+        // //子类继承父类
+        // class Student extends Person{
+        //     //直接继承
+        //     constructor(subject,name) {
+        //         //必须要使用super初始化，否则子类没有this用
+        //         super(name);
+        //         this.subject=subject;
+        //     }
+        // }
+        // const s1=new Student('math','lili');
+        // console.log(s1);
+
+
+        // class student{
+        //     constructor(object,name){
+        //         super(name);
+        //         this.object=object;
+        //     }
+        // }
+
+        // //父类
+        // class Person{
+        //     constructor(name){
+        //         this.name=name;
+        //     }
+        //     eat(){
+        //         console.log('肉');
+        //     }
+        // }
+        // //子类继承父类
+        // class Student extends Person{
+        //     //直接继承
+        //     constructor(subject,name) {
+        //         //必须要使用super初始化，否则子类没有this用
+        //         super(name);
+        //         this.subject=subject;
+        //     }
+        // }
+        // const s1=new Student('math','lili');
+        // console.log(s1);
+
+        // //父类
+        // class Person{
+        //     constructor(name){
+        //         this.name=name;
+        //     }
+        //     eat(){
+        //         console.log('肉');
+        //     }
+        // }
+        // //子类继承父类
+        // class Student extends Person{
+        //     //直接继承
+        //     constructor(subject,name) {
+        //         //必须要使用super初始化，否则子类没有this用
+        //         super(name);
+        //         this.subject=subject;
+        //     }
+        // }
+        // const s1=new Student('math','lili');
+        // console.log(s1);
+
+
+        //父类
+        // class person{
+        //     constructor(name){
+        //         this.name=name;
+        //         this.age=age;
+        //     }
+        //     eat(){
+        //         console.log('rou');
+        //     }
+        // }
+        // class student extends person{
+        //     constructor(object){
+        //         super(name);
+        //         this.object=object;
+        //     }
+        // }
+
+
+
+        // // ES5
+        // //封装一个父类
+        // function person(name,age){
+        //     this.name=name;
+        //     this.age=age;
+        // }
+        // person.prototype.eat=function(){
+        //     console.log('rou');
+        // }
+        // function student(object,name,age){
+        //     this.object=object;
+        // }
+        // student.prototype=new person;
+        // student.prototype.constructor=student;
+        // student.prototypr.study=function(){
+        //     console.log('js');
+        // }
+        // const re=student('js','lili',22);
+
+
+        //ES6
+        //父类
+        class person{
+           constructer(name){
+               this.name=name;
+           }
+           eat(){
+               console.log('rou');
+           }
+        }
+        class student extends person{
+            consturctor(object){
+                super(name);
+                this.object=object;
+            }
+        }
+    </script>
+</body>
+</html>

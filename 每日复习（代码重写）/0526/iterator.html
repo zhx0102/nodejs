@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*
+        一种数据结构只要部署了iterator接口，我们就称这种数据结构是可以迭代的。
+        在ES6中，只要一种数据结构具有了symbol.iterator属性，那就认为是可以迭代的。
+        在ES6中，很多数据结构都部署了iterator接口，例如array、map、set、string
+        解构赋值的时候默认调用iterator接口
+        扩展运算符使用的时候默认调用iterator接口
+        for of 使用的是iterator接口
+        对象没有部署iterator接口
+        */
+        console.log(Array.prototype);
+        //Symbol(Symbol.iterator): ƒ values()
+        /*
+           数组上部署了一个symbol.iterator方法，这个方法返回的是一个迭代器对象，
+           迭代器对象上有一个next方法，一直调用next可以依次拿到数组上的值，
+           next返回的是一个对象，当对象中的done属性变成true的时候，说明值遍历完毕
+         */
+        const arr = [1, 2, 3, 4, 5];
+        // console.log(arr[Symbol.iterator]());
+        // //next: ƒ next()
+
+        // const iter = arr[Symbol.iterator]();
+        // console.log(iter.next());
+        // //    {value: 1, done: false}
+        // console.log(iter.next());
+        // console.log(iter.next());
+        // console.log(iter.next());
+        // console.log(iter.next());
+        // console.log(iter.next());
+        //    {value: undefined, done: true}
+
+
+        // 手动部署iterator
+        // function myIterator(arr){
+        //     //初始化一个计数器
+        //     let index=0;
+        //     return {
+        //         next:function(){
+        //             if(index<arr.length){
+                       //当计数器小于arr的长度时，说明没遍历完
+        //                 return{
+                           //返回的是数组的值和done为false
+        //                     value:arr[index++],
+        //                     done:false
+        //                 }
+        //             }else{
+                           //否则，返回的是undefined和done为true
+        //                 return{
+        //                     value:undefined,
+        //                     done:true
+        //                 }
+        //             }
+        //         }
+        //     }
+        // }
+        
+
+
+
+        // 手动部署一个iterator
+        // function myIterator(arr){
+        //     let count=0;
+        //     return {
+        //        next : function(){
+        //            if(count<arr.length){
+        //                return {
+        //                    value:arr[count++],
+        //                    done:false
+        //                }
+        //            }else{
+        //                return {
+        //                    value:undefined,
+        //                    done:true
+        //                }
+        //            }
+        //        }
+        //     }
+        // }
+
+
+        // 手动部署一个iterator
+        // function myIterator(arr){
+        //     let index=0;
+        //     return {
+        //         next:function(){
+        //             if(index<arr.length){
+        //                 return {
+        //                     value:arr[index++],
+        //                     done:false
+        //                 }
+        //             }else{
+        //                 return {
+        //                     value:undefined,
+        //                     done:true
+        //                 }
+        //             }
+        //         }
+        //     }
+        // }
+
+
+        // 手动部署一个iterator
+        // function myIterator(arr){
+        //     let index=0;
+        //     return{
+        //         next:function(){
+        //             if(index<arr.length){
+        //                 return {
+        //                     value:arr[index++],
+        //                     done:false
+        //                 }
+        //             }else{
+        //                 return {
+        //                     value:undefined,
+        //                     done:true
+        //                 }
+        //             }
+        //         }
+        //     }
+        // }
+
+        // 手动部署一个iterator
+        function myIterator(arr){
+            let index=0;
+            return{
+                next:function(){
+                    if(index<arr.length){
+                        return{
+                            value : arr[index++],
+                            done:false
+                        }
+                    }else{
+                        return{
+                            value:undefined,
+                            done:true
+                        }
+                    }
+                }
+            }
+        }
+        const re=myIterator(arr);
+        console.log(re.next());
+        console.log(re.next());
+        console.log(re.next());
+        console.log(re.next());
+        console.log(re.next());
+        console.log(re.next());
+
+
+
+        /*
+
+        
+
+
+                一种数据结构只要部署了iterator接口，那我们就认为这个数据类型可以迭代。
+                在ES6中，一种数据结构只要具有symbol.iterator属性，那就认为是可以迭代的。
+                在ES6中，很多数据结构都部署了iterator接口，例如array、set、map、string
+                解构赋值时默认调用的是iterator接口
+                扩展运算符使用的时候，默认调用的是iterator接口
+                 for of使用的是iterator接口
+                对象没有部署iterator接口
+
+
+                一种数据结构只要部署了iterator接口，我们就认为它可以迭代。
+                在ES6中，一种数据结构只要有symbol.interator属性，就可以迭代。
+                在ES6中，许多数据结构都有iterator接口，例如：array、set、map、string
+                解构赋值的时候默认调用的是iterator接口
+                扩展运算符使用的时候，默认调用的是iterator接口。
+                for of使用的是iterator接口
+                对象没有iterator接口
+
+                一种数据结构只要部署了iterator接口，则认为它可以迭代
+                在ES6中一种数据结构，如果有Symbol.iterator 属性，则认为它可以迭代。
+                在ES6中，很多数据结构都有iterator接口，例如：array\string\set\map
+                解构赋值的时候，默认执行的就是iterator接口
+                扩展运算符使用的时候，默认执行的就是iterator接口
+                for of使用的是iterator接口
+                对象没有部署iterator接口
+                
+                
+                */
+    </script>
+</body>
+
+</html>

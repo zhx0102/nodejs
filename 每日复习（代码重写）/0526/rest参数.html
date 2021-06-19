@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        rest参数：
+          ES6引进了rest参数，形式为（...rest）
+          用于获取函数多余的参数，只能放在末尾
+          arguments是获取所有实参，rest参数可以取代arguments
+          rest是一个数组
+        */
+       //封装一个函数
+       function fn(a,b,...rest){
+           console.log(a,b,rest);
+           //1 2  [3, 4, 5, 6, 7]
+       }
+       fn(1,2,3,4,5,6,7);
+
+       //封装一个求和函数
+       function add(...rest){
+           let sum=0;
+           rest.forEach(function(item,index){
+               sum+=item;
+           })
+           return sum;
+       }
+    const re=add(1,2,3,4,5,6,7,8,9,10);
+    console.log(re);
+    //55
+    
+    //封装一个冒泡排序的函数
+    function sort(...rest){
+        for(let i=0;i<rest.length;i++){
+            for(let j=0;j<rest.length;j++){
+                if(rest[j]>rest[j+1]){
+                    //解构赋值
+                    [rest[j+1],rest[j]]=[rest[j],rest[j+1]];
+                }
+            }
+        }
+        return rest;
+    }
+    console.log(sort(2,3,1,5,8,6,9,7,4));
+    </script>
+</body>
+</html>

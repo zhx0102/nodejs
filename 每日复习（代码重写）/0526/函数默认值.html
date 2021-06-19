@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function fn(a,b){
+            return a+b;
+        }
+        fn(5,6);
+        //设置默认值
+        function fn1(a,b){
+            b=b||1;
+            return a+b;
+        }
+        fn1(5,6);
+        //设置默认值
+        function fn2(a,b=1){
+            //不传b的参数，则默认为1
+            return a+b;
+        }
+        fn2(a);
+    </script>
+</body>
+</html>

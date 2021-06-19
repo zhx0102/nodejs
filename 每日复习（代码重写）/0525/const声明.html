@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // const声明
+        // 声明的是常量，是不会改变的数据
+        // 特点：
+        //    常量要求大写，但是可以不遵守
+        const PI=3.14;
+        const num=3.1415926;
+            // 常量的值不允许被修改（修改会报错）
+            // 但是，常量保存的是一个地址时，地址不被修改，
+            //这个地址的数据修改那是可以的
+        const arr=[1,2,33,4];
+        arr.pop();
+        console.log(arr);//可以
+
+        // const a=3;
+        // a=8;
+        // console.log(a);//不可以，报错
+        //Assignment to constant variable
+
+             //常量一旦声明必须初始化
+        // const b;
+        // b=7;
+        // console.log(b);//不可以，报错
+        //Missing initializer in const declaration
+
+        // let c;
+        // c=6;
+        // console.log(c);//这是可以的
+        //     //  常量支持块作用域
+        // {
+        //     const a=99;
+        // }
+        // console.log(a);//报错
+        //a is not defined
+            // const声明不能提升
+        console.log(b);//报错
+        const b=99;
+        // Cannot access 'b' before initialization
+
+            //const也不能重复声明
+        const num=99;
+        console.log(num);
+        //dentifier 'num' has already been declared
+
+
+
+        // const用于声明常量，有如下特点：
+        // 1、常数变量名为大写，也可以不必
+        // 2.const支持块级作用域
+        // 3.const的值不允许改变，但如果存储的是一个地址，则地址不改变，数值可变
+        // 4.const声明不能提升
+        // 5.const不能重复声明
+        // 6.const声明的同时必须初始化
+
+
+
+        // let用于声明变量，作用域为所在的代码块
+        // 特点如下：
+        // 1.支持块级作用域
+        // 2.不能变量提升
+        // 3.不能重复声明
+        // 4.块作用域也可以嵌套，且也有作用域链
+
+
+
+        // const声明常量，常量值不可变
+        // 特点如下：
+        // 1.const常量名大写，也可以不用
+        // 2.const的值不允许修改，如果存储的是一个地址，地址不修改，其值可修改
+        // 3.const没有声明提升
+        // 4.canst支持块作用域
+        // 5.const声明的同时就要进行初始化
+        // 6.const不允许重复声明
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

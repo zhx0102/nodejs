@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //浅拷贝
+        var person={
+            name:'小王',
+            age:22,
+            socre:{
+                cha:99,
+                math:88
+            }
+        }
+        var o2={};//用来放拷贝person的属性
+        //遍历person，将person的key全部拷贝给o2
+        for(var key in person){
+            //这里的key是变量，因此用这种方式
+            o2[key]=person[key];
+        }
+        console.log(o2);
+        //检测
+        console.log(o2===person);//fasle
+        console.log(o2.socre===person.socre);//true
+
+
+
+
+
+        // var person={
+        //     name:'小王',
+        //     age:22,
+        //     score:{
+        //         math:88,
+        //         cha:90
+        //     }
+        // }
+        // var o2={};
+        // for(var key in person){
+        //     o2[key]=person[key];
+        // }
+        // console.log(o2);
+    </script>
+</body>
+</html>

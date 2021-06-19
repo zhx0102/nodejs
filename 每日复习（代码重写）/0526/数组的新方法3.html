@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // find()和findIndex():找出第一个符合条件的数组成员
+        // find或者findIndex如果返回值为true，则把当前的值返回，并退出find
+        const person=[
+            {
+                name:'老李',
+                age:30
+            },
+            {
+                name:'老王',
+                age:13
+            },
+            {
+                name:'老张',
+                age:18
+            },
+            {
+                name:'老马',
+                age:60
+            },
+            {
+                name:'老张',
+                age:22
+            }
+        ];
+        const re=person.find((item,index)=>{
+            return item.age<18;
+            //{name: "老王", age: 13}
+        });
+        console.log(re);
+        const re2=person.findIndex((item,index)=>{
+            return item.age==60;
+            //3,返回了第一个符合条件的下标
+        })
+        console.log(re2);
+    </script>
+</body>
+</html>

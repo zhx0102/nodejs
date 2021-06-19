@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // trim():删除字符串两端的空白符
+            const str='    1123  1123  111        ';
+            console.log(str.trim());
+            //1123  1123  111
+        // tirmStart():删除字符串头部的空格
+            console.log(str.trimStart());
+            //1123  1123  111        (后边还有空格)
+        // trimEnd():删除字符串尾部空格
+            console.log(str.trimEnd());
+            //    1123  1123  111(头部还有空格)
+        
+        // startsWith:判断头部是否包含某字符串
+            const str2='Hello world';
+            console.log(str2.startsWith('H'));
+            //true
+        // endsWith():判断尾部是否包含某字符串
+            console.log(str2.endsWith('o'));
+            //false
+        //includes():判断字符串中是否包含某字符串
+            console.log(str2.includes('llo'));
+            //true
+        //repeat():重复当前字符串，并规定字数
+            console.log(str2.repeat(5));
+            //Hello worldHello worldHello worldHello worldHello world
+        //padStart():当前字符串不够长度时，在头部补充
+            console.log(str2.padStart(30,'$%#*&'));
+            //$%#*&$%#*&$%#*&$%#*Hello world
+        //padEnd():当前字符串不够长度时，在尾部补充
+            console.log(str2.padEnd(30,'#$%&*'));
+            // Hello world#$%&*#$%&*#$%&*#$%&
+    </script>
+</body>
+</html>

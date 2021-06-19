@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box">
+        <!-- <h1>今天很快乐</h1>
+        <span>哦耶耶耶</span>
+        <i>明天多吃点</i> -->
+    </div>
+    <script>
+        // 模板字符串，用``（反引号），可以嵌套变量
+        //用${}嵌套变量，插值可书写表达式
+        const text={
+            h1:'哈哈哈哈哈哈哈哈哈哈哈',
+            span:22222222,
+            i:666666666666666
+        }
+        let content=`<h1>${text.h1}</h1>
+        <span>${text.span}</span>
+        <i>${text.i}</i>`;
+        let box=document.querySelector('#box');
+        box.innerHTML=content;
+    </script>
+</body>
+</html>

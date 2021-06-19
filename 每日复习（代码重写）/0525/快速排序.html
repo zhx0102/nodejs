@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr=[2,6,3,8,4,0,1,7,5];
+        //这是需要排序的数组
+        function quickSort(arr){
+            if(arr.length<=1){
+                //如果arr数组里只有一个或0个数据，那就不用排序，直接返回
+                return arr;
+            }
+            let first=arr.shift();
+            //从arr数组里取出第一个数据
+            let left=[];
+            //创建一个新的left数组，用于存放比first小的数据
+            let right=[];
+            //用于存放比frist大的数据
+            arr.forEach(function(item,index){
+                //arr进行循环
+                if(item<first){
+                    left.push(item);
+                    //如果比first小，放left里面
+                }else{
+                    right.push(item);
+                    //如果比first大，放right里面
+                }
+            })
+            let newArr=quickSort(left).concat(first,quickSort(right));
+            //递归调用，继续排序left和right
+            return newArr;
+        }
+        const re=quickSort(arr);
+        console.log(re);
+
+
+
+
+        // //快速排序
+        // let arr=[2,6,3,8,4,0,1,7,5];
+        // function queikSort(arr){
+        //     if(arr.length<=1){
+        //         return arr;
+        //     }
+        //     let first=arr.shift();
+        //     let left=[];
+        //     let right=[];
+        //     arr.forEach(function(item,index){
+        //         if(item<first){
+        //             left.push(item);
+        //         }else{
+        //             right.push(item);
+        //         }
+                
+        //     })
+        //     let newArr=queikSort(left).concat(first,queikSort(right));
+        //         return newArr;
+        // }
+        // const re=queikSort(arr);
+        // console.log(re);
+    </script>
+</body>
+</html>

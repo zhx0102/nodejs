@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //for中小括号声明的不是一个全局作用域
+        //而是一个独立的作用域，并且是for代码的父作用域
+        for(let i=0;i<5;i++){
+            console.log(i);//0,1,2,3,4
+        }
+        for(var i=0;i<5;i++){
+            setTimeout(function(){
+                console.log(i);//5555555555
+            })
+        }
+        //使用var声明变量解决方法为：
+        for(var i=0;i<5;i++){
+            (function(i){
+                setTimeout(function(){
+                    console.log(i);//0,1,2,3,4
+                })
+            })(i);
+        }
+        //使用let则不会有这种烦恼，可直接使用i
+        for(let i=0;i<5;i++){
+            setTimeout(function(){
+                console.log(i);//0,1,2,3,4
+            })
+        }
+
+
+
+        for(var i=0;i<5;i++){
+            (function(i){
+                setTimeout(function(){
+                    console.log(i);
+                })
+            })(i);
+        }
+        for(let i=0;i<5;i++){
+            setTimeout(function(){
+                console.log(i);
+            })
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 箭头函数
+        // 1.当函数是多条语句时
+        // function fn(){
+        //     let a=1;
+        //     console.log(a);
+        // }
+        // fn();
+
+        // const fn = () =>{
+        //     let a=1;
+        //     console.log(a);
+        // }
+        // fn();
+
+        // const fn=()=>{
+        //     let a=0;
+        //     console.log(a);
+        // }
+        // fn();
+
+        // const fn=()=>{
+        //     let a=0;
+        //     console.log(a);
+        // }
+        // fn(a);
+
+        //当函数是一条语句的时候
+        // function fn(){
+        //     console.log(1);
+        // }
+        // fn();
+        // const fn=()=>console.log(1);
+        // fn();
+
+        // 3.当函数体是一条语句，而且是return的时候
+        // function fn(a,b){
+        //     return a+b;
+        // }
+        // const fn=(a,b)=>a+b;
+        // fn();
+
+        // 5.当函数有且只有一个参数的时候，可以省略小括号
+        // function fn(a){
+        //     return a+1;
+        // }
+        // fn();
+        // const fn=a=>a+1;
+        // fn();
+
+        function add(...rest){
+            //封装的时候还是用function
+            let sum=0;
+            rest.forEach(item=>sum+=item);
+            console.log(sum);
+        }
+        add(1,2,3,4,5,6,7,8,9);
+        //45
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // const p1=new Promise((resolve,reject)=>{
+        //     console.log('请求A中');
+        //     setTimeout(()=>{
+        //         try{
+        //             // throw new Error('err:A错了');
+        //             console.log('A成功');
+        //             resolve('A');
+        //         }catch(e){
+        //             reject(e);
+        //         }
+                
+        //     },2000)
+        // })
+        // const p2=new Promise((resolve,reject)=>{
+        //     console.log('请求B中');
+        //     setTimeout(()=>{
+        //         try{
+        //             // throw new Error('err:B错了');
+        //             console.log('B成功');
+        //             resolve('B');
+        //         }catch(e){
+        //             reject(e);
+        //         }
+                
+        //     },1500)
+        // })
+        // const p3=new Promise((resolve,reject)=>{
+        //     console.log('请求C中');
+        //     setTimeout(()=>{
+        //         try{
+        //             // throw new Error('err:C错了');
+        //             console.log('C成功');
+        //             resolve('C');
+        //         }catch(e){
+        //             reject(e);
+        //         }
+                
+        //     },500)
+        // })
+        // // let num=0;
+        // //如果三个都成功，则运行OK
+        // // p1.then(()=>{
+        // //     num++;
+        // //     if(num>=3){
+        // //         console.log('OK!');
+        // //     }
+        // // })
+        // // p2.then(()=>{
+        // //     num++;
+        // //     if(num>=3){
+        // //         console.log('OK!');
+        // //     }
+        // // })
+        // // p3.then(()=>{
+        // //     num++;
+        // //     if(num>=3){
+        // //         console.log('OK!');
+        // //     }
+        // // })
+
+        // //可以将多个promise实例包装成一个新的promise实例
+        // //当全部都成功，promise状态是成功状态，值是结果数组
+
+        // const re = Promise.all([p1,p2,p3]);
+        // console.log(re);//返回了三个成功值组成的数组
+
+        // //有一个返回失败的状态时，promise状态变为失败状态
+        // //返回值为失败的值
+
+        // re.then((data)=>{
+        //     console.log(data);
+        //     console.log('所有请求成功');
+        // }).catch((err)=>{
+        //     console.log('失败了，失败信息：'+err);
+        // })
+
+
+
+        const p1=new Promise((resolve,reject)=>{
+            console.log('请求A数据中');
+            try{
+                // throw new Error('err:A错了');
+                console.log('A成功');
+                resolve('A');
+            }catch(e){
+                reject(e);
+            }
+        })
+        const p2=new Promise((resolve,reject)=>{
+            console.log('请求B数据中');
+            try{
+                // throw new Error('err:B错了');
+                console.log('B成功');
+                resolve('B');
+            }catch(e){
+                reject(e);
+            }
+        })
+        const p3=new Promise((resolve,reject)=>{
+            console.log('请求C数据中');
+            try{
+                // throw new Error('err:C错了');
+                console.log('C成功');
+                resolve('C');
+            }catch(e){
+                reject(e);
+            }
+        })
+
+        const re=Promise.all([p1,p2,p3]);
+        console.log(re);
+        re.then((data)=>{
+            console.log(data);
+            console.log('都成功了！');
+        }).catch((err)=>{
+            console.log('err:错了，错误信息'+err);
+        })
+         
+    </script>
+</body>
+</html>

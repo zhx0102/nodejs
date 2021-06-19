@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*
+        set:
+        类似于数组，但里边的值是唯一的
+        set的参数可以是一个具有iterator接口的值
+        new Set([]) new Set(str)
+        */
+        // size 返回Set的长度
+        const set1 = new Set([1, 2, 3, 4, 5, 6, 7, 8]);
+        console.log(set1);
+        console.log(set1.size); //8
+        // add 添加某个值，返回 Set 结构本身。
+        const re1 = set1.add(7);
+        console.log(re1, set1);
+        //Set(8) {1, 2, 3, 4, 5, …} Set(8) {1, 2, 3, 4, 5, …}
+        // delete 删除某个值，返回一个布尔值，表示删除是否成功。
+        const re2 = set1.delete(1);
+        console.log(re2, set1);
+        // true Set(7) {2, 3, 4, 5, 6, …}
+        // has 返回一个布尔值，表示该值是否为Set的成员
+
+        // clear 清除所有成员，没有返回值。
+        // keys()：返回键名的遍历器,由于 Set 结构没有键名，只有
+        console.log(set1.keys());
+        // 键值（或者说键名和键值是同一个值），所以keys方法和
+        console.log(set1.values());
+        // values方法的行为完全一致。
+        // values()：返回键值的遍历器
+        // entries()：返回键值对的遍历器
+        console.log(set1.entries());
+        // SetIterator {2 => 2, 3 => 3, 4 => 4, 5 => 5, 6 => 6, …}
+        // forEach()：使用回调函数遍历每个成员
+        for (let key of set1.keys()) {
+            console.log(key);
+        }
+
+        for (let value of set1) {
+            console.log(value);
+        }
+
+        //set自身也有forEach遍历自身
+        set1.forEach((item, index) => {
+            console.log(item, index);
+        })
+
+        const re3 = set1.clear(); //没有返回值 直接清空set
+        console.log(set1, re3);
+
+
+        {
+            const set1 = new Set("1234123112345");
+            console.log(set1);
+        }
+
+
+        //用法 数组或者字符串去重
+        {
+            const arr = [1, 4, 3, 2, 5, 4, 3, 6, 5];
+            const re = [...new Set(arr)];
+            console.log(re);
+        }
+    </script>
+</body>
+
+</html>

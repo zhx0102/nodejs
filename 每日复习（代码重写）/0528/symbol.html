@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*
+        symbol
+           设置独一无二的值
+           直接使用symbol调用，可以得到一个独一无二的值
+           想要给o扩展一个属性，但不能覆盖原有的，可用Symbol
+           Symbol的参数是为了识别这个值是啥值
+
+        */
+        //   { console.log(console);
+        //    console.do=function(){
+        //        alert(1);
+        //    }
+        //    console.do(123);}
+
+        {
+            const str1 = Symbol();
+            console.log(str1); //Symbol()
+            const str2 = Symbol();
+            console.log(str1 === str2); //false
+            console.log(Object.prototype.toString.call(str1));
+            //[object Symbol]
+        } {
+            const o = {
+                name: 'laowang'
+            }
+            o[Symbol()] = 'hello';
+            o[Symbol()] = 'world';
+            console.log(o);
+            //{name: "laowang", Symbol(): "hello", Symbol(): "world"}
+            o[Symbol('age')] = 22;
+            console.log(o);
+            //{name: "laowang", Symbol(): "hello", Symbol(): "world", Symbol(age): 22}
+            //Symbol里的参数就是标识,可用于区分
+            o['sy1'] = 'hello';
+            o['sy2'] = 'world';
+            console.log(o);
+            // name: "laowang"
+            // sy1: "hello"
+            // sy2: "world"
+            // Symbol(): "hello"
+            // Symbol(): "world"
+            // Symbol(age): 22
+
+            //遍历对象
+            for (let key in o) {
+                console.log(key, o[key]);
+                //没遍历出symbol，说明不可枚举
+                // name laowang
+                // sy1 hello
+                // sy2 world
+            }
+
+            const keyArr = Object.getOwnPropertySymbols(o);
+            keyArr.forEach((item) => {
+                console.log(item);
+                //Symbol()
+                // Symbol()
+                // Symbol(age)
+            })
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,21 @@
+.box {
+  width: 1024px;
+  height: 1024px;
+  background-color: blue;
+}
+.box .minBox {
+  width: 100px;
+  height: 200px;
+  background-color: red;
+}
+
+.box {
+  width: 1024px;
+  height: 1024px;
+  background-color: pink;
+}
+.box .minBox {
+  width: 100px;
+  height: 200px;
+  background-color: plum;
+}

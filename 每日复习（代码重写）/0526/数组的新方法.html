@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <script>
+        // array的静态方法：
+        // （直接设置给构造函数上的属性和方法都称为静态方法
+        // Array.from:把类数组转为数组格式
+        // 啥叫类数组
+             //下标由0开始自然递增
+             //拥有length属性
+             console.dir(Array);
+            //  类数组（伪数组）
+            const oLi=document.querySelectorAll('ul li');
+            console.log(oLi);
+            //NodeList(5) [li, li, li, li, li]
+            // Array.from:把类数组转为数组格式
+            console.log(Array.from(oLi));
+            //[li, li, li, li, li]
+
+            const likeArray={
+                0:'a',
+                1:'b',
+                2:'c',
+                3:'d',
+                length:4
+            }
+            console.log(Array.from(likeArray));
+            //["a", "b", "c", "d"]
+
+            // Array.isArray 判断当前的类型是否是数组
+            console.log(Array.isArray(likeArray));//false
+            console.log(Array.isArray(oLi));//false
+            console.log(Array.isArray([1,2,3]));//true
+
+            //Array.of 创建一个新的数组，修复了new Array(3)的问题
+            const arr=new Array(3);
+            // [empty × 3]创建了长度为3 的空数组
+            console.log(arr);
+            const arr2=Array.of(3);
+            console.log(arr2);
+            // [3]
+    </script>
+</body>
+</html>

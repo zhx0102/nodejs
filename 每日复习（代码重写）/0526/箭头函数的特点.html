@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 箭头函数的特点：
+        //    1.箭头函数没有this
+            //   document.onmousemove=function(){
+            //       console.log(this);
+            //       //#document
+            //   }
+            //   document.onmousemove=()=>console.log(this);
+              //this指向window
+
+            //   2.箭头函数不能用于构造函数，也就是不能被使用new关键字调用
+                 // const Person=()=>{};
+                 // const p1=new Person();
+                 // Person is not a constructor
+
+            // 3.箭头函数没有arguments对象
+            // const add = (...rest) => {
+            // // console.log(arguments); //arguments is not defined
+            // console.log(rest);
+            // }
+
+            // add(1, 2, 3, 4);
+
+            // 4.箭头函数不能使用yield命令，意味着不能当作generator函数。
+
+
+
+
+           /*
+           箭头函数的特点：
+             1.箭头函数没有this；
+             2.箭头函数没有arguments；
+             3.箭头函数不能用于构造函数，就是不能被new关键字调用
+             4.箭头函数不能使用yield命令，意味着不能被当作generator函数
+
+
+
+
+             箭头函数的特点：
+             1.箭头函数没有this；
+             2.箭头函数不能使用arguments，
+             3.箭头函数不能被构造函数使用，就是不能被new关键字调用；
+             4.箭头函数不能使用yield命令，意味着不能被当作generator函数
+
+
+             箭头函数特点：
+             1.箭头函数没有this
+             2.箭头函数不能使用arguments；
+             3，箭头函数不能被构造函数使用，就是不能被new关键字调用；
+             4，箭头函数不能使用yield命令，意味着不能被当作generator函数
+
+             箭头函数的特点：
+             1.箭头函数没有this；
+             2.箭头函数不能使用arguments；
+             3，箭头函数不能被构造函数使用，也就是不能被new关键字调用；
+             4.箭头函数不能使用yield命令，不能被当作generator函数
+           */
+
+    </script>
+</body>
+</html>

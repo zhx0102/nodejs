@@ -1,0 +1,48 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    },
+    {
+      "id": 2,
+      "title": "nodeJS",
+      "author": "laoli"
+    },
+    {
+      "title": "react",
+      "author": "fxe",
+      "id": 3
+    },
+    {
+      "title": "react",
+      "author": "fxe",
+      "id": 4
+    },
+    {
+      "title": "react",
+      "author": "fxe",
+      "id": 5
+    },
+    {
+      "title": "react",
+      "author": "fxe",
+      "id": 6
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "class": {
+    "name": "nodeJS",
+    "teacher": "laoli"
+  }
+}

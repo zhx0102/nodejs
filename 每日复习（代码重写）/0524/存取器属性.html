@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        var person={
+            fristName:'lao',
+            lastName:"li"
+        }
+        Object.defineProperty(person,'fullName',{
+            get(){//用于得到当前属性值的回调函数
+                return this.firstName+' '+this.lastName;
+            },
+            set(data){//用于监听当前属性值的回调函数
+                var arr=data.split(' ');
+                this.firstName=arr[0];
+                this.lastName=arr[1];
+            }
+        })
+        console.log(person.fullName);
+        person.fullName='lao ma';
+        console.log(person);
+
+
+
+
+
+
+
+        // var person={
+        //     fristName:'lao',
+        //     lastName:'li',
+        // }
+        // Object.defineProperty(person, "fullName", {
+        //     get(){//用于得到当前属性值的回调方法
+        //         return this.fristName+' '+this.lastName;
+        //     },
+        //     set(data){//用于监听当前属性值的变化的回调函数
+        //         var arr=data.split(' ');
+        //         this.firstName=arr[0];
+        //         this.lastName=arr[1];
+        //     }
+        // })
+        // console.log(person.fullName);
+        // person.fullName=('lao wang');
+        // console.log(person);
+
+
+
+
+
+
+
+
+        // var person={
+        //     firstName='lao',
+        //     lastName:'li',
+        //     get fullName(){//用来得到当前属性值的回调函数
+        //         return this.firstName+' '+this.lastName;
+        //     },
+        //     set fullName(data){//用来监听当前属性值变化的回调函数
+        //         var arr=data.split(' ');
+        //         this.firstName=arr[0];
+        //         this.lastName=arr[1];
+        //     }
+        // }
+        // console.log(person.fullName);
+        // person.fullName('lao wang');
+        // console.log(person);
+        
+
+
+
+
+        // var person={
+        //     firstName:'lao',
+        //     lastName:'li',
+        //     get fullName(){
+        //         return this.firstName+' '+this.lastName;
+        //     },
+        //     set fullName(data){
+        //        var arr= data.split(' ');
+        //         this.firstName=arr[0];
+        //         this.lastName=arr[1];
+        //     }
+        // }
+        // console.log(person.fullName);
+        // person.fullName='lao zhang';
+        // console.log(person);
+    </script>
+</body>
+</html>

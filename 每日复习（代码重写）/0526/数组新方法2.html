@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 数组的新方法：
+        // reduce:遍历累加
+            // reduce两个参数:
+            //   参数一:回调函数
+            //      参数1:初始值或上一次回调函数返回值
+            //      参数2:当前的值
+            //      参数3:当前值下标
+            //      参数4:原数组引用
+            // 参数2:累加的初始值
+            //    如果没有给初始值,则进入reduce的是数组第一个和第二个值
+            // reduce的返回值就是最后累加的值
+
+            // const arr=[1,2,3,4,5,6,7,8,9];
+            // const re=arr.reduce((prev,item,index,arr)=>{
+            //     console.log(prev,item,index,arr);
+            //     return item+prev;
+            // },0);
+            // console.log(re);
+
+
+            // const arr=[1,2,3,4,5];
+            // const re=arr.reduce((prev,item,index,arr)=>{
+            //     console.log(item+prev);
+            // },0);
+            
+
+            // const arr=[1,2,3,4];
+            // const re=arr.reduce((prve,item,index,arr)=>{
+            //     console.log(prev+item);
+            // },0);
+
+
+            // const arr=[1,2,3,4,5];
+            // const re=arr.reduce((prev,item,index,arr)=>{
+            //     console.log(prev+item);
+            // },0);
+
+
+            // {
+            //     const str = "http://www.baidu.com?name=laozhang&age=18&sex=nv";
+            //     const re=str.split('?')[1].split('&').reduce((prev,item,index)=>{
+            //           const [key,value]=item.split('=');
+            //           prev[key]=value;
+            //           return prev;
+            //     },{})
+            //     console.log(re);
+
+            // }
+
+            // {
+            //     const str = "http://www.baidu.com?name=laozhang&age=18&sex=nv";
+            //     const re=str.split('?')[1].split('&').reduce((prev,item,index)=>{
+            //         const [key , value]=item.split('=');
+            //         prev[key]=value;
+            //         return prev;
+            //     },{})
+            //     console.log(re);
+            // }
+
+
+            // 计算重复次数
+            // const str='aaassdffffsasdhgshtfgsdfg';
+            // const o={};
+            // for(let value of str){
+                //遍历
+            //     if(o[value]){
+                // o[value]是重复次数
+                // 如果o[value]非零，则++
+            //         o[value]++;
+            //     }
+            //     else{
+                // 否则就给他一个1
+            //         o[value]=1;
+            //     }
+            //     console.log(o[value],value);
+            // }
+            // console.log(o);
+
+            // 计算重复次数
+            const str='ashjddddddddffdsads';
+            const o={};
+            for(let value of str){
+                if(o[value]){
+                    o[value++];
+                }else{
+                    o[value]=1;
+                }
+            }
+            console.log(o);
+
+            // 数组的新方法：
+            // reduce 有两个参数
+            // 第一个参数是回调函数
+            // 参数1：初始值或者上一个回调函数返回的值
+            // 参数2：当前的值
+            // 参数3：当前值的下标
+            // 参数4：原数组的引用
+            // 第二个参数是累加的初始值
+            // 如果没有给初始值，进入reduce的将是数组的第一个和第二个值
+            // reduce的返回值就是最后累加的值
+
+            /*数组的新方法：reduce有两个参数：
+            第一个是回调函数
+            参数1：初始值或上一次回调函数返回的值
+            参数2：当前值
+            参数3：当前值下标
+            参数4：原数组的引用
+            参数二是初始值
+            当没有初始值时，进入reduce的就是数组的第一第二个值
+            reduce的返回值就是最后累加的值
+
+
+            reduce是数组的新方法，有两个参数：
+            参数一：回调函数
+                 参数1：初始值或上一次回调函数传回的值
+                 参数2：当前值
+                 参数3：当前值的下标
+                 参数4：原数组的引用
+            参数二：初始值
+                如果没有初始值，则进入reduce的是数组的第一个和第二个值
+            reduce的返回值就是最后累加的值
+
+
+            */
+            
+    </script>
+</body>
+</html>

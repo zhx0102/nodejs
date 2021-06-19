@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //     //创建对象
+        // var o1={
+        //     name:'lili',
+        //     age:23,
+        //     score:{
+        //         math:99,
+        //         cha:76
+        //     }
+        // }
+    //     var re1=Object.create(o1);
+    //     //原本原型链：re1-->Object.prototype-->null
+    //     // 现在的原型链:re1-->o1-->Object.prototype-->null
+    //     console.log(re1);
+
+    //     var re2=Object.create(Object);//创建一个普通对象
+    //     console.log(re2);
+
+    //     var re3=Object.create(null);//创建一个干净的对象
+    //     console.log(re3);
+
+    //    var o2=Object.create(null,{
+    //        name:{
+    //            value:'lili',
+    //            writable:true,//控制属性值是否能被修改，默认值为false
+    //            enumerable:true,//控制属性是否能被枚举，默认值为false
+    //            configurable:true//控制属性是否能删除，或者writable和enumerable的值是否能被改变
+    //        }
+    //    })
+    //    o2.age=33;
+    //    console.log(o2.age);
+    //    o2.name='lolo';
+    //    console.log(o2.name);//因为writable的值为true，因此name可以被修改
+
+    //    for(var key in o2){
+    //        console.log(key);//因为enumerable的值为true，因此可以枚举属性
+    //    }
+        
+    // //    delete o2.name;//因为configurable的值为true，因此name可以被删除
+    // //    console.log(o2);
+
+
+
+
+    // var o2=Object.create(null,{
+    //     name:{
+    //         value:'lili',
+    //         writable:false,//判断属性是否能被修改
+    //         enumerable:false,//判断属性是否能被枚举
+    //         configurable:false//判断属性是否能被删除，writable和enurmerable是否能被修改
+    //     }
+    // })
+    // o2.age=55;
+    // console.log(o2);
+    // o2.name='kaka';
+    // console.log(o2.name);//无法修改
+    // for(var key in o2){//无法枚举
+    //     console.log(key);
+    // }
+    // delete o2.name;//无法删除
+    // console.log(o2);
+    
+
+
+
+    // var o2=Object.create(null,{
+    //     name:{
+    //         value:'lili',
+    //         writable:true,
+    //         enumerable:true,
+    //         configurable:true
+    //     }
+    // })
+
+
+    // var o2=Object.create(null,{
+    //     name:{
+    //         value:'lili',
+    //         writable:true,
+    //         enumerable:true,
+    //         configurable:true
+    //     }
+    // })
+
+    // var o1=Object.create(o2);
+    // var o1=Object.create(Object);//创建一个普通对象
+    // var o1=Object.create(null);//创建一个干净的对象
+    </script>
+</body>
+</html>

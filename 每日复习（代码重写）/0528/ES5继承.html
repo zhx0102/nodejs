@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // //封装一个父类
+        // function person(name, age) {
+        //     this.name = name;
+        //     this.age = age;
+        // }
+        // person.prototype.eat = function () {
+        //     console.log('鸡公煲');
+        // }
+        // //封装一个子类
+        // function student(subject, name, age) {
+        //     //调用父类，并改变父类的this
+        //     //构造函数继承，只能继承构造函数里的东西，没有eat
+        //     person.call(this, name, age);
+        //     this.subject = subject;
+        // }
+
+        // // student.prototype=person.prototype;
+        // //子类父类共享一个原型对象
+        // //替换、覆盖
+        // //这里得到的是地址，student.prototype和person.prototype
+        // //是同一个地址，修改以后，父类的也会被修改
+
+        // student.prototype = new person;
+        // //修复构造器
+        // student.prototype.constructor = student;
+        // student.prototype.study = function () {
+        //     conosle.log('js');
+        // }
+        // const s1 = new student('js', 'lili', 22);
+        // console.log(s1);
+        // //student {name: "lili", age: 22, subject: "js"}
+
+
+        // //封装一个父类
+        // function person(name){
+        //     this.name=name;
+        // }
+        // person.prototype.eat=function(){
+        //     console.log('鸡公煲');
+        // }
+        // //封装一个子类
+        // function student(object,name){
+        //     this.object=object;
+        // }
+        // student.prototype=new person;
+        // student.prototype.constructor=student;
+        // student.prototype.study=function(){
+        //     console.log('js');
+        // }
+        // const re=new student('js','lili');
+        // console.log(re);
+
+
+        // //封装一个父类
+        // function person(name){
+        //     this.name=name;
+        // }
+        // person.prototype.eat=function(){
+        //     console.log('鸡公煲');
+        // }
+        // function student(object,name){
+        //     this.object=object;
+        // }
+        // student.prototype=new person;
+        // student.prototype.constructor=student;
+        // student.prototype=function(){
+        //     console.log('js');
+        // }
+        // const re=new student('js','lili');
+        // console.log(student);
+        
+
+
+        //封装一个父类
+        function person(name,age){
+            this.name=name;
+            this.age=age;
+        }
+        person.prototype.eat=function(){
+            console.log('鸡公煲');
+        }
+        //封装一个学生类
+        function student(object,name,age){
+            this.object=object;
+        }
+        student.prototype=new person;
+        student.prototype.constructor=student;
+        student.prototype.study=function(){
+            console.log('js');
+        }
+        const re=new student('js','lili',22);
+        console.log(re);
+
+
+
+
+    </script>
+</body>
+
+</html>

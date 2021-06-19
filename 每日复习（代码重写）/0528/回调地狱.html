@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //先请求a数据，再请求b数据，再请求c数据
+        // 回调地狱写法
+        //回调函数嵌套回调函数就是回调地狱
+        //程序会变得臃肿，耦合性高
+        setTimeout(() => {
+            console.log('a');
+            setTimeout(() => {
+                console.log('b');
+                setTimeout(() => {
+                    console.log('c')
+                }, 1000)
+            }, 1000)
+        }, 1000)
+
+        $('.box').animate({
+            left: '1000px',
+        }, 1000, function () {
+            $('box').animate({
+                top: '500px',
+            }, 1000, function () {
+                $('box').animate({
+                    left: '0px',
+                }, 1000, function () {
+                    $('box').animate({
+                        top: '0px',
+                    }, 1000)
+                })
+            })
+        })
+        // $('.box')
+        // .animate({
+        //     left: '1000px',
+        // }, 1000)
+        // .animate({
+        //     top: '500px',
+        // }, 1000)
+        // .animate({
+        //     left: '0px',
+        // }, 1000)
+        // .animate({
+        //     top: '0px',
+        // }, 1000)
+
+        $('.box')
+        .animate({
+            left: '1000px',
+        }, 1000)
+        .animate({
+            top: '500px',
+        }, 1000)
+        .animate({
+            left: '0px',
+        }, 1000)
+        .animate({
+            top: '0px',
+        }, 1000)
+    </script>
+</body>
+
+</html>

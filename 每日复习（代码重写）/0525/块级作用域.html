@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 块级作用域
+            // 块：代码块{}（大括号）
+            // 使用let和const声明变量和常量，支持块级作用域
+            //而使用var声明变量，一直是函数作用域
+
+        {
+            var a=1;
+
+        }
+        console.log(a);//可以使用
+        
+        {
+            let b=1;
+        }
+        console.log(b);//报错
+        // b is not defined
+
+
+
+        // 块级作用域
+        // 可以使用let和const声明变量和常量，支持块级作用域
+        // 而 var创建的变量，只有函数作用域
+    </script>
+</body>
+</html>

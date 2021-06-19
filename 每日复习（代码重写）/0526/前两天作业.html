@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         /* 
+             1. 已知一个url地址 "http://www.baidu.com?name=laozhang&age=18&sex=nv";
+        把查询字符串以对象的形式表示  {name:"laozhang",age:18,sex:"nv"}
+
+            2. 已知一个url地址 "http://www.baidu.com",已知用户提交信息是{name:"laozhang",age:18,sex:"nv"}
+        请得到一个完整的地址："http://www.baidu.com?name=laozhang&age=18&sex=nv"
+        
+        
+        */
+
+        
+    //   const str="http://www.baidu.com?name=laozhang&age=18&sex=nv";
+    //   const re=str.split('?')[1].split('&');
+    //   //用？将str拆分开，获得需要的？后面的内容，再用&拆分一次
+    //   const newObj={};
+    //   //声明一个新的对象常量
+    //   re.forEach(function(item,index){
+        //re遍历一下取值
+    //       const [key,value]=item.split('=');
+             //解构赋值，item.split('=')[0]赋给变量key
+             //解构赋值，item.split('=')[1]赋给变量value
+    //       newObj[key]=value;
+             //对象的key值为变量value保存的的值
+    //   })
+    //   console.log(newObj);
+
+
+    // const str="http://www.baidu.com?name=laozhang&age=18&sex=nv";
+    // let arr=str.split('?')[1].split('&');
+    // let obj={};
+    // arr.forEach(function(item,index){
+    //     const [key,value]=item.split('=');
+    //     obj[key]=value;
+    // })
+    // console.log(obj);
+
+    // const str="http://www.baidu.com?name=laozhang&age=18&sex=nv";
+    // const arr=str.split('?')[1].split('&');
+    // let obj={};
+    // arr.forEach(function(item,index){
+    //     const [key,value]=item.split('=');
+    //     obj[key]=value;
+    // })
+    // console.log(obj);
+
+
+    // const str="http://www.baidu.com?name=laozhang&age=18&sex=nv";
+    // const arr=str.split('?')[1].split('&');
+    // const obj={};
+    // arr.forEach(function(item,index){
+    //     const [key,value]=item.split('=');
+    //     obj[key]=value;
+    // })
+    // console.log(obj);
+
+
+
+    // 2. 已知一个url地址 "http://www.baidu.com",已知用户提交信息是{name:"laozhang",age:18,sex:"nv"}
+    //     请得到一个完整的地址："http://www.baidu.com?name=laozhang&age=18&sex=nv"
+    let str="http://www.baidu.com?";
+    const obj={
+        name:'laowang',
+        age:18,
+        sex:'nv'
+    }
+    //遍历一下obj
+    for(let key in obj){
+        //字符拼接
+        let s=key+'='+obj[key]+'&';
+        str+=s;
+    }
+    console.log(str.slice(0,-1));
+    
+    // let str="http://www.baidu.com?";
+    // const obj={
+    //     name:'laowang',
+    //     age:18,
+    //     sex:'nv'
+    // }
+    // for(var key in obj){
+    //     const s=key+'='+obj[key]+'&';
+    //     str+=s;
+    // }
+    // console.log(str.slice(0,-1));
+
+
+
+    // 设置单独的时间
+    // 设置年份 setFullYear
+    // 设置月份 setMonth
+    // 设置日 setDate
+    // 设置小时 setHours
+    // 设置分钟 setMinutes
+    // 设置秒 setSeconds
+    // 设置毫秒 setMilliseconds
+
+    // // 获取一个 7天以后现在的时间
+    // // 方法一
+    // const now=+new Date();//时间戳
+    // // 1622080220627
+    // const nowTime=new Date();//时间
+    // // Thu May 27 2021 09:50:20 GMT+0800 
+    // nowTime.setDate(new Date().getDate()+7);
+    // console.log(nowTime);
+
+
+    // const now=new Date();
+    // now.setDate(new Date().getDate()+7);
+    // console.log(now);
+
+    // const now=new Date();
+    // now.setDate(new Date().getDate()+7);
+    // console.log(now);
+    </script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //使用a,b,c,d保存数组中的每一个值
+        // const arr=[1,2,3,4];
+        // const [a,b,c,d]=arr;//解构赋值
+        // //声明了四个常量保存arr对应的数据
+        // console.log(a,b,c,d);//1 2 3 4
+
+        // 解构赋值的特点：
+        // 1.解构失败则返回undefined
+                // const arr=[1,2];
+                // const [a,b,c,d]=arr;
+                // console.log(a,b,c,d);
+                //1 2 undefined undefined
+        // 2. 不完全解构也可以成功
+                // const arr=[1,2,3,4];
+                // const [a,b]=arr;
+                // console.log(a,b);//1,2
+        // 3.可以给解构赋值设置默认值
+                // const arr=[1,2];
+                // const [a=99,b=88,c=77]=arr;
+                // console.log(a,b,c);//1 2 77
+        // 4.可以设置rest参数（当参数过多，而只需要个别参数时，其他参数可用rest保存）
+                // const arr=[1,2,3,4,5,6,7,8];
+                // const [a,b,c,...rest]=arr;
+                // console.log(a,b,c,rest);
+                //1 2 3 (5) [4, 5, 6, 7, 8]
+        // 5.多维数组只要解构赋值，一一对应也能够成功
+                // const arr=[1,2,[3,4,[5,6]]];
+                // const [a,b,[c,d,[e,f]]]=arr;
+                // console.log(a,b,c,d,e,f);
+                //1 2 3 4 5 6
+        // 两个变量交换数据的三种方法：
+        // 1.第三个变量法
+                // let a=44;
+                // let b=55;
+                // let c=0;
+                // c=a;
+                // a=b;
+                // b=c;
+                // console.log(a,b);
+        // 2.减法交换
+                // let a=99;
+                // let b=55;
+                // a=a+b;
+                // b=a-b;
+                // a=a-b;
+                // console.log(a,b);//55,99
+        // 3.解构赋值交换
+                let a=99,b=55;
+                [a,b]=[b,a];
+                console.log(a,b);//55,99
+
+
+
+                 //练习
+        {
+            //Cannot access 'hoo' before initialization
+             let [foo = hoo, hoo = 2] = [];
+             //foo = hoo，但let没有声明提升，因此报错，不会再往下执行
+            console.log(foo, hoo); 
+        }
+    </script>
+</body>
+</html>

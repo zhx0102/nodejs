@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //封装一个函数，专门用于写事件的核心代码
+        function center(){
+            console.log('这是核心代码');
+            console.log(this);
+        }
+        //写鼠标移动事件
+        document.onmousemove=throttle(center,100);
+        //封装一个节流的函数
+        function throttle(fn,time){
+            //两个参数，第一个为核心代码函数，第二个为时间
+            let lastTime=0;//这是上一次移动的时间戳
+            //因为事件后面一定是函数，所以要返回一个函数
+            return function(){
+                let nowTime=+new Date();//这是这次移动的时间戳
+                //如果这一次移动时间-上一次移动时间，小于我们所规定的时间time，则直接return，出函数；
+                if(nowTime-lastTime<time){
+                    return;
+                }
+                //将nowTime（这次移动后的时间戳）赋值给lastTime保存，用于下次比较
+                lastTime=nowTime;
+                //执行核心代码
+                //fn的this指向，按要求应该指向的是document，
+                //但现在调用方式为默认调用，this指向window，
+                //用强制绑定改为this指向document
+                //同时fn（center）的event的值也要进行修改，以便需要的时候使用
+                fn.call(this,arguments[0]);
+            }
+        }
+
+
+
+
+        // function center(e){
+        //     console.log('核心代码');
+        //     console.log(this);
+        // }
+        // document.onmousemove=throttle(center,100);
+        // function throttle(fn,time){
+        //     let lastTime=0;
+        //     return function(){
+        //         let nowTime=+new Date();
+        //         if(nowTime-lastTime<time){
+        //             return;
+        //         }
+        //         lastTime=nowTime;
+        //         fn.call(this,arguments[0]);
+        //    }
+        // }
+
+
+
+        // function center(){
+        //     console.log('核心代码');
+        //     console.log(this);
+        // }
+        // document.onmousemove=throttle(center,100);
+        // function throttle(fn,time){
+        //     let lastTime=0;
+        //     return function(){
+        //         let nowTime=+new Date();
+        //         if(nowTime-lastTime<time){
+        //             return;
+        //         }
+        //         lastTime=nowTime;
+        //         fn.call(this,arguments[0]);
+        //     }
+        // }
+    </script>
+</body>
+</html>

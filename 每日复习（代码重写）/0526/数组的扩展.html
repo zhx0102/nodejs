@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 数组的扩展：
+        //    扩展运算符（...），可以把数组展开
+        const arr=[1,2,3,4,5,6];
+        console.log(...arr);
+        //1 2 3 4 5 6
+        //扩展运算符：合并数组
+        const arr1=[1,2,3,4,5];
+        const arr2=[11,22,33,44,55];
+        const re=[...arr1,...arr2];
+        console.log(re);
+        //(10) [1, 2, 3, 4, 5, 11, 22, 33, 44, 55]
+        //扩展运算符：传参
+        const fn=(a,b,c,d)=>console.log(a,b,c,d);
+        const arg=[1,2,3,4];
+        fn(...arg);
+        //1 2 3 4
+        //扩展运算符：复制数组
+        const arr3=[1,2,3,4,5,6,99];
+        const arr4=[...arr3];
+        console.log(arr4);
+        //[1, 2, 3, 4, 5, 6, 99]
+        console.log(arr3===arr4);
+        //false
+
+        //扩展运算符：展开字符串
+        const str='helloworld';
+        console.log(...str);
+        //h e l l o w o r l d
+    </script>
+</body>
+</html>

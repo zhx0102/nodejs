@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //js中学到的声明：
+        // var let const function class label
+        class person {
+            constructor(name,age){
+                //class的默认方法
+                // 只要被new，就会默认调用constructor方法
+                console.log(111111);//111111
+                //没有写的话，会默认有一个空的constructor方法
+                this.name=name;
+                this.age=age;
+                //给实例化对象扩展的属性和方法
+                //被称为公有属性或公有方法
+
+                //直接扩展给实例化对象的公有化方法
+                //称为特权方法
+                this.study=function(){
+                    console.log('math');
+                }
+
+                let a=0;
+                //构造函数中生命的变量或方法
+                //称为私有属性或私有方法
+            }
+            //在原型对象上扩展公有方法
+            eat(){
+                conosle.log('chichichichi');
+            }
+        }
+
+        person.hello='world';
+        //把构造函数当作对象扩展的属性或方法
+        //称作静态属性或静态方法
+        //跟实例化对象一点关系都没有
+
+        //也可以通过原型对象补充方法
+        person.prototype.say=function(){
+            console.log('hi!!!');
+        }
+
+        const p1 = new person('lili',23);
+        //person {name: "lili", age: 23}
+        console.log(p1);
+        //person {}
+        console.log(p1.constructor);
+        // class person {
+
+        // }
+        console.log(p1 === person);//false
+        console.log(person.hello);
+        console.log(p1.hello);//undefined
+
+        class student{
+            constructor(name,age){
+                this.name=name;
+                this.age=age;
+                //公有属性或公有方法
+
+                this.study=function(){
+                    console.log('math');
+                }
+                //特权方法
+
+                let a=0;
+                //私有属性或私有方法
+            }
+            say(){
+                console.log('hi');
+            }
+            //在原型对象上扩展公有属性或方法
+        }
+        student.prototype.eat=function(){
+            console.log('rourourou');
+        }
+        //在原型对象上补充方法
+
+        sudent.hello='world';
+        //把构造函数当作对象扩展属性或方法
+        //称为静态属性或静态方法
+
+
+        class dog{
+            constructor(name,age){
+                this.name=name;
+                this.age=age;
+                //公有方法或共有属性
+
+                this.say=function(){
+                    console.log('wang');
+                }
+                //特有方法
+
+                let a=0;
+                //私有方法或属性
+            }
+            eat(){
+                console.log('骨头');
+                //在原型对象上扩展的公有属性或方法
+            }
+        }
+        student.prototype.study(){
+            console.log('hhhhhh');
+        }
+        //原型对象补充方法
+
+        dog.hello='world';
+        //把构造函数当作对象用
+        //称为静态属性或静态方法
+
+
+
+    </script>
+</body>
+
+</html>
